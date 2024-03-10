@@ -21,24 +21,17 @@
                 <input type="password"  name="password"  placeholder="*******" required>
                 <i class='bx bxs-lock-alt' ></i>
             </div>
-
-            <div class="remember-forgot">
-                <label><input type="checkbox">Recordar credenciales</label> 
-                <a href="#">Olvidó su contraseña?</a>
-            </div>
-
-            <select class="form-select form-select-lg mb-3" name="role" aria-label=".form-select-lg example">
+           
+            <select placeholder="Seleccione su rol" name="seletRole">      
+                <option selected id="selected">Seleccione su rol</option>                         
                 <?php 
-                    include "Connection.php";  
+                    include "Connection.php";                          
                     $acces = new Connection();
-                    $option =  $acces->query();
-
-                ?>
-
-                <option selected>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                    $option =  $acces->connection()->query('SELECT * FROM Role');
+                    foreach ($option as $row) {
+                        echo "<option value='".$row["idRole"]."'>".$row["roleType"].'</option>';                        
+                    }                                             
+                ?>                 
             </select>
 
             <button type="submit" name="submit" class="btn"> Login </button>
@@ -46,8 +39,7 @@
             <div class="register-link">
                 <p>No tienes una cuenta? <a href="#">Registrate</a> </p>
             </div>
-            <div class="dropdown">
-
+            
         </form>
     </div>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>

@@ -2,5 +2,5 @@
     $server = "localhost";
     $user = "root";
     $password = "";
-    $bd = "projectOptics";
+    $bd = "DB_optical";
 ?>

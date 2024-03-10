@@ -1,24 +1,12 @@
 <?php
+                  
+include "../../Connection.php";                          
+$acces = new Connection();
+$option =  $acces->connection()->query('SELECT * FROM Role');
 
-$a[0] = 1;
-$a[1] = 3;
-$a[2] = 5;
-$cuenta = count($a); 
-$table = "ensayo";
-
-
-$lenQuery = count($a);
-$sql = "SELECT ";
-for ($i= 0;$i<$lenQuery;$i++){
-    $sql .= $a[$i]." ";
+while ($row = mysqli_fetch_array($option)) {
+    $id = $row["idRole"];
+    $role = $row["roleType"];
+    echo $id." ".$role;
 }
-$sql .= "FROM ".$table;
-echo $sql;
-   
-
-
-include "../model/Login";
-
-include "../../models/";
-echo $cuenta;
 ?>

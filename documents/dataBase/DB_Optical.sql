@@ -48,6 +48,7 @@ DROP TABLE IF EXISTS `User`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `User` (
   `idUser` int(11) NOT NULL AUTO_INCREMENT,
+  `names` varchar(50) NOT NULL,
   `document` varchar(15) NOT NULL,
   `password` varchar(20) NOT NULL,
   `Role_idRole` int(11) NOT NULL,
@@ -63,7 +64,7 @@ CREATE TABLE `User` (
 
 LOCK TABLES `User` WRITE;
 /*!40000 ALTER TABLE `User` DISABLE KEYS */;
-INSERT INTO `User` VALUES (1,'123456789','ABCD',1),(2,'987654321','DCBA',2);
+INSERT INTO `User` VALUES (1,'Dimitri Karamasov' ,'123456789','ABCD',1),(2,'Tengo Kawana' ,'987654321','DCBA',2);
 /*!40000 ALTER TABLE `User` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
