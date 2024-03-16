@@ -6,7 +6,7 @@
     <link href="http://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">    
     <title>Optics</title>
 </head>
 <body>
@@ -25,7 +25,7 @@
             <select placeholder="Seleccione su rol" name="seletRole">      
                 <option selected id="selected">Seleccione su rol</option>                         
                 <?php 
-                    include "Connection.php";                          
+                    include "utils/Connection.php";                          
                     $acces = new Connection();
                     $option =  $acces->connection()->query('SELECT * FROM Role');
                     foreach ($option as $row) {
@@ -41,7 +41,8 @@
             </div>
             
         </form>
-    </div>
+    </div>    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>

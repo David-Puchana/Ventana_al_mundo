@@ -1,14 +1,29 @@
 <?php 
 
-include "Connection.php";
+include "utils/Connection.php";
 
-$acces = new Connection();
-$user="123456789";
-$pas="ABCD";
+$action = new Connection();
+$action->connection();
 
- 
-$query="SELECT * FROM user WHERE document=$user AND pass='$pas';";        
-$result = $acces->connection()->query($query);
-echo $result;
+function select($tables,$fields, $conditions){
+    $sql = 'SELECT ';
+    $sql .= implode(',', $fields);
+
+    if(count($tables) === 1){        
+        $sql .= ' FROM '.$tables[0].' '.' WHERE ';
+        $sql .= join(' AND ', $conditions);
+        $sql .= ''.';';
+
+    } else{        
+        $sql .= ' FROM '.implode(' LEFT JOIN ', $conditions);
+    }
+    echo $sql;
+}
+
+$tables = ['User'];
+$fields = ['*'];
+$conditions = ['document="123456789"', 'pass="ABCD"', 'Role_idRole="1"'];
+
+select($tables,$fields,$conditions);
 
 ?>
