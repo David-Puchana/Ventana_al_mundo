@@ -1,4 +1,5 @@
 <?php
+include("../login.php");
 if(isset($_POST['submit'])){
     
     if(!empty($_POST['user']) &&  !empty($_POST['password'])){
@@ -21,7 +22,7 @@ if(isset($_POST['submit'])){
             echo "<script>window.location.href = 'login.php';</script>";              
             echo '<script>alert("Hola mundo");</script>';                 
             sleep(2);                  
-            header("Location:homePage.php");           
+            header("Location:../view/homePage.php");           
         }
         else{
             header("Location:login.php");

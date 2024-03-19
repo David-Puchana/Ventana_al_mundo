@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <form action="validarLogin.php" method="post">
+        <form action="controller/validarLogin.php" method="post">
             <h1>Login</h1>
             <div class="input-box">
                 <input type="text" name="user" placeholder="Ingrese su usuario" required>            
