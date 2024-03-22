@@ -1,14 +1,13 @@
 <?php 
 include("../Crud.php");
-Class User extends Crud{
+Class User{
     private $idUser;
     private $names;
     private $document;
     private $pass;
     private $role_idRole;
-    
-    public function __construct() {}
-    public function __construct($idUser,$names,$document,$pass, $role_idRole) {
+
+    function __construct($idUser,$names,$document,$pass, $role_idRole) {
         $this->user = $idUser;
         $this->names = $names;
         $this->document = $document;
@@ -16,16 +15,47 @@ Class User extends Crud{
         $this->role_idRole = $role_idRole;        
     }
 
-    public function login($user, $pass,$role){
-        
-        $table_1=["User"];
-        $fiels=["*"];
-        $conditions=["document="."'".$user."'", "pass="."'".$pass."'", "Role_idRole=".$role];
-        $sql = new Crud();        
-        $q = $sql->select($table_1,$fiels,$conditions);
-        echo $q;
-        $result= $acces->connection()->query($q);
-        return $result;
+    public static function createLogin($document, $pass, $Role_idRole) {
+        return new self(null,null ,$document, $pass, $Role_idRole);
     }
+    public function getIdUser() {
+        return $this->idUser;
+    }   
+    
+    public function setIdUser($idUser) {
+        $this->idUser = $idUser;
+    }    
+
+    public function getNames() {
+        return $this->names;
+    }
+    
+    public function setNames($names) {
+        $this->names = $names;
+    }
+    
+    public function getDocument() {
+        return $this->document;
+    }    
+
+    public function setDocument($document) {
+        $this->document = $document;
+    }   
+
+    public function getPass() {
+        return $this->pass;
+    }
+
+    public function setPass($pass) {
+        $this->pass = $pass;
+    }
+
+    public function getRoleIdRole() {
+        return $this->role_idRole;
+    }
+
+    public function setRoleIdRole($role_idRole) {
+        $this->role_idRole = $role_idRole;
+    }    
 }
 ?>

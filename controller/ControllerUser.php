@@ -1,5 +1,7 @@
 <?php
 include("../login.php");
+include("../User.php");
+include("../Crud.php");
 if(isset($_POST['submit'])){
     
     if(!empty($_POST['user']) &&  !empty($_POST['password'])){

@@ -1,9 +1,8 @@
 <?php
-class Crud extends Connection {
-    private $conn;
+class Crud {
 
-    public function __construct(Connection $conn) {        
-        $this->conn = $conn;
+    public function __construct() {    
+
     }
 
     public function select($table_1,$fields=[""],$conditions=[""],$table_2=[""]){
@@ -27,8 +26,11 @@ class Crud extends Connection {
             $sql .= join(' AND ', $conditions);
             $sql .= ''.';';            
         }            
-                 
-        return $this->connection()->query( $sql );
+        include("Connection.php");
+        $acces = new Connection();
+        echo $sql;
+        $result= $acces->connection()->query($sql);
+        return $result;
     }    
 }
 

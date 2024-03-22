@@ -21,7 +21,7 @@ class Connection{
         
         if($conn)
         {
-           //echo "Conexion exitosa";
+           echo "Conexion exitosa";
         }
         else{
            echo "No se pudo conectar";
