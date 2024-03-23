@@ -26,10 +26,11 @@ class Crud {
             $sql .= join(' AND ', $conditions);
             $sql .= ''.';';            
         }            
-        include("Connection.php");
+        require "Connection.php";
         $acces = new Connection();
-        echo $sql;
-        $result= $acces->connection()->query($sql);
+        $result= $acces->connection()->prepare($sql);
+        $result->execute();
+        $acces->disconnect();
         return $result;
     }    
 }

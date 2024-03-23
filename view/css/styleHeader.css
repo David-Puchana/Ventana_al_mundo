@@ -6,40 +6,23 @@ body{
     margin: 0;
     padding: 0;
     font-family: "Poppins", "sans-serif";
-    background-image: url('../../img/background.jpeg');
-    background-size: 100%;
+    
+}
 
+main{
+    background-image: url('../../img/background.jpeg');
+    background-size: 60%;
+    background-position: center;
+    height:100vh;
 }
 
 header{
-    display: block;
+    display: inline;
     background-color: #191a1f;
 }
 
 #imgLogo{
     width: 10%;
-}
-
-#divImg h2{
-    margin-top: 0px;
-    font-family: "Forum", "sans-serif";
-    color: white;
-    font-size: 0.5em;
-    height: 0.05%;
-}
-
-#divImg h1{
-    font-family: "Forum", "sans-serif";
-    color: white;
-    font-size: 1em;
-    text-decoration: underline white;
-    font-weight: 500;
-    margin-bottom: 0px;
-}
-
-.center{
-    text-align: center;
-    width: 100%;
 }
 
 #navBar{
@@ -48,7 +31,7 @@ header{
 }
 
 #colorNav{
-    background-color: #131418;
+    background-color: #000000;
     width: 100%;
 }
 

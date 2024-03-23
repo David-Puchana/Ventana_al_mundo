@@ -6,12 +6,12 @@
     <link href="http://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">    
+    <link rel="stylesheet" href="<?php echo urlsite?>/view/css/style.css">    
     <title>Optics</title>
 </head>
 <body>
     <div class="wrapper">
-        <form action="<?php echo urlsite?>?page=login" method="post">
+        <form action="<?php echo urlsite?>?page=loginout" method="post">
             <h1>Login</h1>
             <div class="input-box">
                 <input type="text" name="user" placeholder="Ingrese su usuario" required>            
@@ -35,12 +35,9 @@
             </select>
 
             <button type="submit" name="submit" class="btn"> Login </button>
-
-            <div class="register-link">
-                <p>No tienes una cuenta? <a href="#">Registrate</a> </p>
-            </div>
             
         </form>
+        <p class="text-danger"><?php echo(isset($_GET['msg']))?$_GET['msg']:"" ?> </p>
     </div>    
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>

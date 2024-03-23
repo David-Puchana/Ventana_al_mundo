@@ -2,35 +2,23 @@
 
 class Connection{
     
-    private $server;
-    private $user;
-    private $password;
-    private $bd;    
-
-    public function __construct(){
-        include "Setting.php";
-        $this->server = $server;
-        $this->user = $user;
-        $this->password= $password;
-        $this->bd = $bd;
-    }
-
+    private $conn;
 
     public function connection(){
-        $conn = mysqli_connect($this->server,$this->user, $this->password, $this->bd);
-        
-        if($conn)
-        {
-           echo "Conexion exitosa";
-        }
-        else{
-           echo "No se pudo conectar";
-        }        
-        return $conn;
-    }
-
-    public function disconnect($conn){
-        mysqli_close($conn);
+        try{
+            $dns = "mysql:host=localhost;dbname=".DB_NAME;
+            $optios = array(
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+            );
+            $this->conn=new PDO($dns,DB_USER,DB_PASSWORED);
+            
+            return $this->conn;
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }    
+    }    
+    public function disconnect(){
+        $this->conn=null;
     }
 }
 ?>
