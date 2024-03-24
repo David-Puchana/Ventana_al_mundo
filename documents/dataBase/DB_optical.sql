@@ -16,6 +16,38 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `Patient`
+--
+
+DROP TABLE IF EXISTS `Patient`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Patient` (
+  `idPatient` int(11) NOT NULL AUTO_INCREMENT,
+  `document` varchar(15) NOT NULL,
+  `names` varchar(100) NOT NULL,
+  `last_names` varchar(45) NOT NULL,
+  `address` varchar(45) NOT NULL,
+  `phone` varchar(45) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `Stratum_idStratum` int(11) NOT NULL,
+  PRIMARY KEY (`idPatient`,`Stratum_idStratum`),
+  KEY `fk_Patient_Stratum1_idx` (`Stratum_idStratum`),
+  CONSTRAINT `fk_Patient_Stratum1` FOREIGN KEY (`Stratum_idStratum`) REFERENCES `Stratum` (`idStratum`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Patient`
+--
+
+LOCK TABLES `Patient` WRITE;
+/*!40000 ALTER TABLE `Patient` DISABLE KEYS */;
+INSERT INTO `Patient` VALUES (1,'23','pepito','perez','ac12','3124568','as@copito',1);
+/*!40000 ALTER TABLE `Patient` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `Role`
 --
 
@@ -40,6 +72,30 @@ INSERT INTO `Role` VALUES (1,'Administrador'),(2,'Optometra');
 UNLOCK TABLES;
 
 --
+-- Table structure for table `Stratum`
+--
+
+DROP TABLE IF EXISTS `Stratum`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Stratum` (
+  `idStratum` int(11) NOT NULL AUTO_INCREMENT,
+  `stratum` varchar(45) NOT NULL,
+  PRIMARY KEY (`idStratum`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Stratum`
+--
+
+LOCK TABLES `Stratum` WRITE;
+/*!40000 ALTER TABLE `Stratum` DISABLE KEYS */;
+INSERT INTO `Stratum` VALUES (1,'Estrato 1'),(2,'Estrato 2'),(3,'Estrato 3'),(4,'Estrato 4'),(5,'Estrato 5'),(6,'Estrato 6');
+/*!40000 ALTER TABLE `Stratum` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `User`
 --
 
@@ -50,7 +106,7 @@ CREATE TABLE `User` (
   `idUser` int(11) NOT NULL AUTO_INCREMENT,
   `names` varchar(50) NOT NULL,
   `document` varchar(15) NOT NULL,
-  `password` varchar(20) NOT NULL,
+  `pass` varchar(20) NOT NULL,
   `Role_idRole` int(11) NOT NULL,
   PRIMARY KEY (`idUser`,`Role_idRole`),
   KEY `fk_User_Role_idx` (`Role_idRole`),
@@ -64,7 +120,7 @@ CREATE TABLE `User` (
 
 LOCK TABLES `User` WRITE;
 /*!40000 ALTER TABLE `User` DISABLE KEYS */;
-INSERT INTO `User` VALUES (1,'Dimitri Karamasov' ,'123456789','ABCD',1),(2,'Tengo Kawana' ,'987654321','DCBA',2);
+INSERT INTO `User` VALUES (1,'Dimitri Karamasov','123456789','ABCD',1),(2,'Tengo Kawana','987654321','DCBA',2);
 /*!40000 ALTER TABLE `User` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -77,4 +133,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-03-06 23:33:22
+-- Dump completed on 2024-03-23 23:52:36

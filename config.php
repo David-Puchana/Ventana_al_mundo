@@ -1,5 +1,5 @@
 <?php
-    define("urlsite","http://localhost/ProyectoOptica_PHP/Ventana_al_mundo/");
+    define("urlsite","http://localhost/Ventana_al_mundo/");
     define("DB_NAME","DB_optical");
     define("DB_USER","root");
     define("DB_PASSWORED","9uch4n45");

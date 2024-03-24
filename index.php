@@ -13,8 +13,13 @@
             require "controller/UserContoller.php";
             UserContoller::loginController();            
             break;    
-        case 'logout':break;
-        case 'admin': echo "logueado";break;
+        case 'logout':
+            require "controller/UserContoller.php";
+            UserContoller::logout();   
+            break;
+        case 'admin': 
+            require 'view/welcome.php';
+            break;
         default: echo "<a href='".urlsite."?page=login'>LOGIN</a>"; break;
     }
     
