@@ -27,6 +27,7 @@ header{
 #navBar{
     margin-top: 0px;
     margin-left: 25px;
+    margin-right: 40px;
 }
 
 #colorNav{
@@ -34,14 +35,11 @@ header{
     width: 100%;
 }
 
-#btnPacientes:hover{    
+#btnPacientes:hover, #btnUser:hover{    
     background-color: #434548;
 }
 
-#btnCierre{
-    padding: 10px;
-    margin-right: 25px;
-    text-decoration: none;
-    color: white;
-    background-color: #243838;    
+#imgUsuario{
+    width: 40px;
+    margin-right: 5px;
 }

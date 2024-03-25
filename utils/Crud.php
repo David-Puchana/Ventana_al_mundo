@@ -1,4 +1,5 @@
 <?php
+
 class Crud {
 
     public function __construct() {    
@@ -25,14 +26,30 @@ class Crud {
             $sql .= ' FROM '.$table_1[0].' WHERE ';
             $sql .= join(' AND ', $conditions);
             $sql .= ''.';';            
-        }                
-        require "Connection.php";
-        $acces = new Connection();
+        }  
+        require_once "Connection.php";              
+        $acces= new Connection();
         $result= $acces->connection()->prepare($sql);
         $result->execute();
         $acces->disconnect();
         return $result;
     }    
+
+    public function insert($table,$fields=[""],$values=[""]){
+        $sql = "INSERT INTO ".$table." (";
+        $sql.= implode(' ,', $fields).")";
+        $sql.= ' VALUES ('.implode(' ,', $values).");";   
+        require_once "Connection.php";
+        $acces= new Connection();
+        $result= $acces->connection()->prepare($sql);
+        $result->execute();
+        $acces->disconnect();
+        if($result->rowCount() > 0)
+            return true;
+        else 
+            return false;
+    }
+
 }
 
 ?>

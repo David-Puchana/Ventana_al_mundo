@@ -5,8 +5,10 @@ require "model/UserModel.php";
 class UserContoller{
 
     public static function index(){
-        if(isset($_SESSION["login"]))
-            header('location:'.urlsite);
+        if(isset($_SESSION["login"])){
+            unset($_SESSION['login']);
+            session_destroy(); 
+            header('location:'.urlsite);}
         require "view/user/login.php";                
     }
 
@@ -16,9 +18,12 @@ class UserContoller{
         $role=$_POST['seletRole'];
         $login = new UserModel();
         $result = $login->login( $user, $pass, $role );
+        $data = $login->dataUser($user);
         if($result){
+            $_SESSION['name'] = $data['names'];
+            $_SESSION['role'] = $data['roleType'];
             $_SESSION['login'] = $user;
-            header('location:'.urlsite.'?page=home');
+            require 'view/homePage.php';
         }else{                
             $_SESSION['errorMessage'] = "Usuario o contraseña";
             header('location:'.urlsite.'?page=index');                              

@@ -1,17 +1,15 @@
 <?php 
 require "config.php";
-require "model/UserModel.php";
+require_once "model/PatientModel.php";
 
 
-$login = new UserModel();
-$user = "987654321";
-$pass = "ABCD";
-$role = 2;
+$cr = new PatientModel();
 
-$result = $login->dataUser($user);
-if ($result) {
-    // Procesar el resultado
-    echo "Nombre: ".$result['names']."<br>";
-    echo "Apellido: ".$result['roleType']."<br>";
-  }
+$table = "Patient";
+$fields = ['document','names','last_names','address','phone','email','Stratum_idStratum'];
+$values = ["'63'","'Oracio'","'Ricardo'","'A123'","'65564'","'7'","'2'"];
+
+$cr->insertModel($values);
+
+if($cr) echo "logrado";
 ?>

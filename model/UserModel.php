@@ -1,5 +1,5 @@
 <?php 
-require "utils/Crud.php";
+require_once "utils/Crud.php";
 Class UserModel{
     
     private $idUser;

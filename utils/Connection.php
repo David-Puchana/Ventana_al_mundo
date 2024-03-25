@@ -10,8 +10,7 @@ class Connection{
             $optios = array(
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
             );
-            $this->conn=new PDO($dns,DB_USER,DB_PASSWORED);
-            
+            $this->conn=new PDO($dns,DB_USER,DB_PASSWORED);         
             return $this->conn;
         }catch(PDOException $e){
             echo $e->getMessage();

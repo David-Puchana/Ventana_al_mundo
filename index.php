@@ -17,9 +17,9 @@
             require "controller/UserContoller.php";
             UserContoller::logout();   
             break;
-        case 'home': 
-            require 'view/homePage.php';
-            break;
+        case 'registrar':
+            
+            break;    
         default:
             break;
     }

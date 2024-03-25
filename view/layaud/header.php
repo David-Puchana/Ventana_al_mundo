@@ -25,33 +25,24 @@
                                     Pacientes
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Registar</a></li>
+                                    <li><a class="dropdown-item" href="<?php echo urlsite?>?page=registrar">Registar</a></li>
                                     <li><a class="dropdown-item" href="#">Consultar</a></li>                            
                                 </ul>
                             </li>
                         </ul>  
-                        
-
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="btnPacientes">                            
+                        <ul class="navbar-nav mb-2 mb-lg-0" id="btnUser">                            
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="<?php echo urlsite?>/img/usuario.png" id="imgUsuario">
                                     <?php echo $_SESSION['name'] ?? "(Nombre)"; ?> 
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="#"><?php echo $_SESSION['role'] ?? "(Rol)"; ?></a></li>
-                                    <li><a class="dropdown-item" href="#">Consultar</a></li>                            
+                                    <li><a class="dropdown-item" href="<?php echo urlsite?>?page=logout">Cerrar sesión</a></li>                         
                                 </ul>
                             </li>
-                        </ul>
-
-                      
-
-
-                    </div>      
-                    
-                    
-
-
+                        </ul>  
+                    </div>                
                 </nav>
             </div>
         </header>        
