@@ -132,3 +132,13 @@ select{
     padding-left: 10%;
     
 }
+
+.swal2-title {
+    font-size: 1.5em !important;    
+}
+  
+.swal2-html-container{    
+    font-size: 1em !important;
+}
+  
+  

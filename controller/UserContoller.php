@@ -3,6 +3,7 @@ session_start();
 require "model/UserModel.php";
 
 class UserContoller{
+
     public static function index(){
         if(isset($_SESSION["login"]))
             header('location:'.urlsite);
@@ -17,9 +18,10 @@ class UserContoller{
         $result = $login->login( $user, $pass, $role );
         if($result){
             $_SESSION['login'] = $user;
-            header('location:'.urlsite.'?page=admin');
-        }else{
-            header('location:'.urlsite."msg=Usuario o Contraseña incorrectos");
+            header('location:'.urlsite.'?page=home');
+        }else{                
+            $_SESSION['errorMessage'] = "Usuario o contraseña";
+            header('location:'.urlsite.'?page=index');                              
         }            
     }
 

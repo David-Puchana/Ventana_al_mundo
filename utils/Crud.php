@@ -10,7 +10,7 @@ class Crud {
     
         if($table_2[0]!=""){
             for($i= 0; $i<count($table_1); $i++){
-                $sql .= ''.$table_1[$i].'*'.' ,'.$table_2[$i].'*';
+                $sql .= ''.$table_1[$i].'.*'.' ,'.$table_2[$i].'.*';
                 $sql .= ' FROM '.$table_1[$i].' INNER JOIN '.$table_2[$i].' ON '.$conditions[$i];            
             }
         }
@@ -25,7 +25,7 @@ class Crud {
             $sql .= ' FROM '.$table_1[0].' WHERE ';
             $sql .= join(' AND ', $conditions);
             $sql .= ''.';';            
-        }            
+        }                
         require "Connection.php";
         $acces = new Connection();
         $result= $acces->connection()->prepare($sql);

@@ -5,8 +5,7 @@
 body{
     margin: 0;
     padding: 0;
-    font-family: "Poppins", "sans-serif";
-    
+    font-family: "Poppins", "sans-serif"; 
 }
 
 main{
@@ -39,3 +38,10 @@ header{
     background-color: #434548;
 }
 
+#btnCierre{
+    padding: 10px;
+    margin-right: 25px;
+    text-decoration: none;
+    color: white;
+    background-color: #243838;    
+}

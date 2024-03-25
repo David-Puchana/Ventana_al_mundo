@@ -29,9 +29,29 @@
                                     <li><a class="dropdown-item" href="#">Consultar</a></li>                            
                                 </ul>
                             </li>
-                        </ul>    
-                    </div>        
+                        </ul>  
+                        
+
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="btnPacientes">                            
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <?php echo $_SESSION['name'] ?? "(Nombre)"; ?> 
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#"><?php echo $_SESSION['role'] ?? "(Rol)"; ?></a></li>
+                                    <li><a class="dropdown-item" href="#">Consultar</a></li>                            
+                                </ul>
+                            </li>
+                        </ul>
+
+                      
+
+
+                    </div>      
+                    
+                    
+
+
                 </nav>
             </div>
         </header>        
-
