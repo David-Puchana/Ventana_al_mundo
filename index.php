@@ -1,27 +1,39 @@
 <?php
     require "config.php";
-    $page = "index";
+    $page = "login";
 
     if(isset($_GET["page"]))
         $page = $_GET["page"];
+
     switch($page){
-        case 'index':
+        case 'login':
             require "controller/UserContoller.php";
-            UserContoller::index();            
+            UserContoller::index();  
             break;
-        case 'login': 
+        case 'process':
             require "controller/UserContoller.php";
-            UserContoller::loginController();            
-            break;    
+            UserContoller::loginController();  
+            break;            
         case 'logout':
             require "controller/UserContoller.php";
             UserContoller::logout();   
-            break;
-        case 'registrar':
-            
+            break;            
+        case 'admin':
+            require "controller/AdminController.php";
+            AdminController::indexAdmin();
             break;    
-        default:
+        case 'patient':    
+            require "controller/PatientController.php";
+            if(isset($_GET["option"])):
+                $method = $_GET["option"];
+                if(method_exists("PatientContoller",$method)):                    
+                    PatientContoller::{$method}();
+                endif;
+            else:
+                PatientContoller::listPatients();
+            endif;                    
+            break;  
+        default:            
             break;
     }
-    
 ?>    

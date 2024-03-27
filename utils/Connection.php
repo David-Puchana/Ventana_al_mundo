@@ -3,7 +3,6 @@
 class Connection{
     
     private $conn;
-
     public function connection(){
         try{
             $dns = "mysql:host=localhost;dbname=".DB_NAME;
