@@ -8,7 +8,7 @@ class UserContoller{
             session_destroy();     
             header('location:'.urlsite);                   
         }
-        require "view/front/login.php";                
+        require "view/admin/login.php";                
     }
 
     public static function loginController(){

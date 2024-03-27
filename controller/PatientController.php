@@ -26,8 +26,11 @@ class PatientContoller{
         $stratum = $_REQUEST['seletStatum'];    
         $values = ["'$document'","'$name'","'$lastname'","'$address'","'$phone'","'$email'",$stratum];
         $result = $patient->insertModel($values);
-        if($result) 
+        if($result){
+            $_SESSION['exito'] = "cargado";
+            
             header('location:'.urlsite."?page=patient");        
+        }    
     }
 
     public static function updateform(){

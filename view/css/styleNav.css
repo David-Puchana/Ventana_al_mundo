@@ -6,9 +6,11 @@ body{
     margin: 0;
     padding: 0;
     font-family: "Poppins", "sans-serif"; 
-    background-image: url('../../img/background.jpeg');
-    background-size: 60%;
-    background-position: center;   
+    background-color: #a5a8aa;
+    
+}
+
+main{
     height:100vh;
 }
 
@@ -41,16 +43,24 @@ header{
     margin-right: 5px;
 }
 
-#wrapper{
-    background: transparent;
-    border: 2px solid rgba(255,255,255,0.2);
-    backdrop-filter: blur(20px);
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    color: #fff;   
+
+
+.btnOption{
+    border: none;
     border-radius: 10px;
-    padding: 30px 40px;
+    background: #000000;
+    color: white;
+    width: 200px;
+    height: 50px;
+}
+.btnOption:hover{
+    background: #0f2c39;    
 }
 
-#btnRegister{
-    background: #000000;
+footer {
+    background-color: #000000;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 }

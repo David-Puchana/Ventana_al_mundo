@@ -53,7 +53,7 @@
             </div>
         </div>
             
-        <div class="col-md-3">
+        <div class="col-md-3 mt-4 mb-4">
             <select name="seletStatum" class="form-select" aria-label="Default select example" required>  
                 <option selected>Elija su estrato</option>                                
                 <?php 
@@ -72,7 +72,7 @@
         </div>
         
         <div class="col-12">
-            <button type="submit" name="submit" class="btn" id="btnRegister"> Registrar </button>             
+            <button type="submit" name="submit" class="btnOption"> Registrar </button>             
         </div>
     </form>
 </div>

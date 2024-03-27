@@ -1,5 +1,5 @@
 <?php require "view/layaud/header.php"?>
-<div>
+<div class="container mt-4 mb-5 p-2" style="width: 80%;">
     <form class="row g-3 needs-validation" action="<?php echo urlsite?>?page=patient&option=updatepatient" method="post">
         <div class="col-md-4">
             <label for="validationCustom01" class="form-label">Documento</label>
@@ -53,7 +53,7 @@
             </div>
         </div>
             
-        <div class="col-md-3">
+        <div class="col-md-3 mt-4 mb-4">
             <select name="seletStatum" class="form-select" aria-label="Default select example" required>  
                 <option value="<?php echo $dtEdit['idStratum']?>"><?php echo $dtEdit['stratum']?></option>                                
                 <?php 
@@ -72,7 +72,7 @@
         </div>
         
         <div class="col-12">
-            <button type="submit" name="submit" class="btn"> Actualizar </button>             
+            <button type="submit" name="submit" class="btnOption"> Actualizar </button>             
         </div>
     </form>
 </div>
