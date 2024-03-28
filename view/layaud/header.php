@@ -47,3 +47,39 @@
         </nav>
     </div>  
 </header> 
+<?php
+    if (isset($_SESSION['exito'])) {        
+        echo '<script>
+                Swal.fire({                             
+                    position: "center",                  
+                    icon: "success",
+                    title: "Registro exitoso", 
+                    timer: 1500,                   
+                    width: "25%",
+                    background: "#31363F",
+                    color: "#EEEEEE",
+                    showConfirmButton: false
+                });
+            </script>';    
+            
+            
+    } 
+    unset($_SESSION['exito']);
+?>
+<?php
+    if (isset($_SESSION['actualizado'])) {        
+        echo '<script>
+                Swal.fire({                             
+                    position: "center",                  
+                    icon: "success",
+                    title: "Registro actualizado exitoso", 
+                    timer: 1500,                   
+                    width: "25%",
+                    background: "#31363F",
+                    color: "#EEEEEE",
+                    showConfirmButton: false
+                });
+            </script>';                            
+    } 
+    unset($_SESSION['actualizado']);
+?>

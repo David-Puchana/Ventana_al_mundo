@@ -1,7 +1,7 @@
     
     
     <footer>
-        <div class="container-fuid pt-3 pb-2">        
+        <div class="container-fuid pt-2 pb-2">        
             <p class="small text-center" style="color:white;">&copy; Todos los derechos reservados | 2024</p>
         </div>
     </footer>

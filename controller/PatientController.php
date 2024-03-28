@@ -27,16 +27,15 @@ class PatientContoller{
         $values = ["'$document'","'$name'","'$lastname'","'$address'","'$phone'","'$email'",$stratum];
         $result = $patient->insertModel($values);
         if($result){
-            $_SESSION['exito'] = "cargado";
-            
-            header('location:'.urlsite."?page=patient");        
+            $_SESSION['exito'] = "cargado";            
+            header('location:'.urlsite."?page=patient&option=formAddPatient");        
         }    
     }
 
     public static function updateform(){
         $patient = new PatientModel();
         $id = $_REQUEST["id"];
-        $dtEdit = $patient->listByID($id);
+        $dtEdit = $patient->listByID($id);        
         require 'view/admin/patient/viewUpdate.php';
     }
 
@@ -53,9 +52,10 @@ class PatientContoller{
         $stratum = $_REQUEST['seletStatum'];    
         $values = [$document,$name,$lastname,$address,$phone,$email,$stratum];  
         $result = $patient->updateModel($values,$id);
-        if($result) 
-               header('location:'.urlsite."?page=patient");    
-               
+        if($result){
+            $_SESSION['actualizado'] = "actualizado";  
+            header('location:'.urlsite."?page=patient");
+        }                       
         else
             header('location:'.urlsite."?page=patient&msg=No se pudo actualizar");   
     }

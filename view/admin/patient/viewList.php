@@ -1,28 +1,6 @@
 <?php require "view/layaud/header.php"?>
-<div class="container mt-4 mb-5 p-2">
-    <table class="table table-dark table-hover" style="width:100%">
-
-        <?php
-            if (isset($_SESSION['exito'])) {        
-                echo '<script>
-                        Swal.fire({                             
-                            icon: "success",
-                            title: "Registro exitoso",
-                            showConfirmButton: false,
-                            timer: 1500                            
-                            position: "center",                  
-                            title: "Oops...",                            
-                            width: "25%",
-                            background: "#31363F",
-                            color: "#EEEEEE",
-                            confirmButtonColor: "#222831"
-                        });
-                    </script>';               
-            } 
-            unset($_SESSION['exito']);
-        ?>    
-
-
+<div class="mt-4 mb-3 ms-3 me-3">
+    <table class="table table-dark table-hover">
         <caption>Pacientes</caption>
         <thead>
             <tr>
@@ -51,7 +29,5 @@
         <?php endforeach?>
         </tbody>    
     </table>
-
-
 </div>
 <?php require "view/layaud/footer.php"?>    
