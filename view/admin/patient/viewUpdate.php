@@ -1,8 +1,9 @@
 <?php require "view/layaud/header.php"?>
-<div class="container mt-4 mb-5 p-2" style="width: 80%;">
+<main>
+<div class="wrapper">
     <form class="row g-3 needs-validation" action="<?php echo urlsite?>?page=patient&option=updatepatient" method="post">
         <div class="col-md-4">
-            <label for="validationCustom01" class="form-label">Documento</label>
+            <label for="validationCustom01" class="form-label text-light">Documento</label>
             <input type="text" name="document" class="form-control" id="validationCustom01" value="<?php echo $dtEdit['document']?>" required>
             <div class="valid-feedback">
             Looks good!
@@ -10,7 +11,7 @@
         </div>
 
         <div class="col-md-4">
-            <label for="validationCustom01" class="form-label">Nombre</label>
+            <label for="validationCustom01" class="form-label text-light">Nombre</label>
             <input type="text" name="names" class="form-control" id="validationCustom01" value="<?php echo $dtEdit['names']?>" required>
             <div class="valid-feedback">
             Looks good!
@@ -18,7 +19,7 @@
         </div>
 
         <div class="col-md-4">
-            <label for="validationCustom02" class="form-label">Apellidos</label>
+            <label for="validationCustom02" class="form-label text-light">Apellidos</label>
             <input type="text" name="lastnames" class="form-control" id="validationCustom02" value="<?php echo $dtEdit['last_names']?>" required>
             <div class="valid-feedback">
             Looks good!
@@ -27,7 +28,7 @@
 
 
         <div class="col-md-4">
-            <label for="validationCustom02" class="form-label">Dirección</label>
+            <label for="validationCustom02" class="form-label text-light">Dirección</label>
             <input type="text" name="address" class="form-control" id="validationCustom02" value="<?php echo $dtEdit['address']?>" required>
             <div class="valid-feedback">
             Looks good!
@@ -35,7 +36,7 @@
         </div>
 
         <div class="col-md-4">
-            <label for="validationCustom02" class="form-label">Teléfono</label>
+            <label for="validationCustom02" class="form-label text-light">Teléfono</label>
             <input type="text" name="phone" class="form-control" id="validationCustom02" value="<?php echo $dtEdit['phone']?>" required>
             <div class="valid-feedback">
             Looks good!
@@ -43,7 +44,7 @@
         </div>
 
         <div class="col-md-4">
-            <label for="validationCustomUsername" class="form-label">Correo</label>
+            <label for="validationCustomUsername" class="form-label text-light">Correo</label>
             <div class="input-group has-validation">
             <span class="input-group-text" id="inputGroupPrepend">@</span>
             <input type="text" name="email" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" value="<?php echo $dtEdit['email']?>" required>
@@ -76,5 +77,5 @@
         </div>
     </form>
 </div>
-
+</main>
 <?php require "view/layaud/footer.php"?>

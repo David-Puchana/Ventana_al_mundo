@@ -7,14 +7,21 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php echo urlsite?>/view/css/style.css">    
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>   
+    
+    <?php 
+        if(isset($_SESSION['nameLogin'])){
+            echo '<meta http-equiv="refresh" content="1;url='.urlsite."?page=admin\">";
+        } 
+    ?>
+
     <title>Optics</title>
 </head>
 <div class="wrapper">
     <form action="<?php echo urlsite?>?page=process" method="post">
         <h1>Login</h1>
         <div class="input-box">
-            <input type="text" name="user" placeholder="Ingrese su usuario" required>            
+            <input type="text" name="user" placeholder="Documento" required>            
             <i class='bx bxs-user' ></i>
         </div>
         <div class="input-box">
@@ -47,9 +54,27 @@
                         color: "#EEEEEE",
                         confirmButtonColor: "#222831"
                     });
-                </script>';               
+                </script>';     
+                unset($_SESSION['errorMessage']);          
         } 
-        unset($_SESSION['errorMessage']);
+        if(isset($_SESSION['nameLogin'])) {   
+            $name = $_SESSION['nameLogin'];
+            unset($_SESSION['nameLogin']);                                    
+            echo '<script>
+                    Swal.fire({     
+                        position: "center",                  
+                        icon: "success",
+                        title: "Bienvenido", 
+                        text: "'.$name.'",
+                        timer: 1500,                   
+                        width: "30%",                      
+                        background: "#31363F",
+                        color: "#EEEEEE",
+                        fontSize: "0.5em",
+                        showConfirmButton: false
+                    });                   
+            </script>';                    
+        }         
     ?>                    
 </div>    
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

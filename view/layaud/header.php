@@ -14,22 +14,23 @@
 <header>         
     <div id="colorNav">            
         <nav class="navbar navbar-expand-lg" id="navBar">                   
-            <img src="<?php echo urlsite?>/img/logo.png" id="imgLogo">                                              
+            <img src="<?php echo urlsite?>/img/logo.png" id="imgLogo">   
+            <a class="navbar-brand text-white" href="<?php echo urlsite?>?page=admin">home</a>                                           
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="btnPacientes">                            
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="btnPacientes">                                                
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Pacientes
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="<?php echo urlsite?>?page=patient&option=formAddPatient">Registar</a></li>
-                            <li><a class="dropdown-item" href="<?php echo urlsite?>?page=patient&option=listPatients">Consultar</a></li>                            
+                            <li><a class="dropdown-item" href="<?php echo urlsite?>?page=patient&option=listPatients">Listar Pacientes</a></li>                            
                         </ul>
-                    </li>
+                    </li>                    
                 </ul>  
                 <ul class="navbar-nav mb-2 mb-lg-0" id="btnUser">                            
                     <li class="nav-item dropdown">

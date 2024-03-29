@@ -3,12 +3,16 @@ session_start();
 require "model/UserModel.php";
 class UserContoller{
     public static function index(){
-        if(isset($_SESSION["login"])){ 
+        if(isset($_SESSION["nameLogin"])){
+            require "view/admin/login.php";                
+        }
+        elseif(isset($_SESSION["nameLogin"])){ 
             unset($_SESSION['login']);
             session_destroy();     
             header('location:'.urlsite);                   
-        }
-        require "view/admin/login.php";                
+        }else{
+            require "view/admin/login.php";                
+        }        
     }
 
     public static function loginController(){
@@ -17,10 +21,11 @@ class UserContoller{
         $role=$_POST['seletRole'];
         $login = new UserModel();
         $result = $login->login( $user, $pass, $role );
-        echo 'entro';
         if($result){            
             $_SESSION['login'] = $user;
-            header('location:'.urlsite."?page=admin");                              
+            $data = $login->dataUser($user);   
+            $_SESSION['nameLogin'] = $data['names'];
+            header('location:'.urlsite."?page=login");                              
         } else{                
             $_SESSION['errorMessage'] = "Usuario o contraseña";
             header('location:'.urlsite.'?page=login');                              
@@ -30,7 +35,7 @@ class UserContoller{
     public static function logout(){
         if(!isset($_SESSION["login"]))          
             header('location:'.urlsite);
-        unset($_SESSION['login']);
+        unset($_SESSION['']);
         session_destroy();     
         header('location:'.urlsite);   
     }

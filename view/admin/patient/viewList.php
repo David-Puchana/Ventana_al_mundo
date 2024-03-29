@@ -1,4 +1,5 @@
 <?php require "view/layaud/header.php"?>
+<main>
 <div class="mt-4 mb-3 ms-3 me-3">
     <table class="table table-dark table-hover">
         <caption>Pacientes</caption>
@@ -30,4 +31,5 @@
         </tbody>    
     </table>
 </div>
+</main>
 <?php require "view/layaud/footer.php"?>    
